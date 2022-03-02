@@ -1,13 +1,14 @@
 # Author: Chandan Sohi
-# GitHub username:  sohic
+# GitHub username: sohic
 # Date: 3/1/2022
-# Description: Portfolio Project - Battleship Game
+# Description: Portfolio Project - BattleShip Game
 
 class ShipGame:
     """This class represents a Battle Ship Game between two players.  There 11 total methods and are as below:
         1.  __init__ - initializes all the data members
         2.  place_ship - used to place the player ship on the respective board
         3.  get_current_state - returns the current state of the game
+        4.  get_num_ships_remaining - returns number of ships remaining for a given player
         4.  _get_row_index - returns numerical row index for given row letter
         5.  _get_row_letter - returns the letter for given row index
         6.  _valid_location - checks to see if given location exist on game board
@@ -109,6 +110,15 @@ class ShipGame:
     def get_current_state(self):
         """Method get_current_state takes no parameters and returns the current state of the game."""
         return self._state
+
+    def get_num_ships_remaining(self, player):
+        """Method get_num_ships_remaining takes a player as a parameter and returns the number of ships remaining for
+        that player."""
+        if player.upper() == "FIRST":
+            return self._ships_total_1
+        if player.upper() == "SECOND":
+            return self._ships_total_2
+        return
 
     def _get_row_index(self, location):
         """Method _get_row_index returns the index number corresponding to the letter for row (which needs to be between
@@ -295,5 +305,3 @@ class ShipGame:
             if len(ship_loc) == 0:
                 self._state = message  # if length of ship_loc is 0 (meaning no ships) change game state
         return True
-
-
