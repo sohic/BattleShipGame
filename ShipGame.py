@@ -1,5 +1,4 @@
 # Author: Chandan Sohi
-# GitHub username: sohic
 # Date: 3/1/2022
 # Description: Portfolio Project - BattleShip Game
 
